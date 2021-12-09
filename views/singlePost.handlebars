@@ -1,0 +1,54 @@
+
+<div class="single-posts">
+    
+    <div class="card">
+        <div class="card-header flex-row justify-space-between">
+            <h2>
+                
+                {{post.title}}
+            </h2>
+            <div>
+                posted By {{post.User.username}}
+            </div>
+            </div>
+            <div class="card-body">
+               {{body}} 
+            </div>
+        
+
+    </div>
+{{#if post.Comments}}
+<div class="card">
+    <div class="card-header">
+        <h3>Comments</h3>
+    </div>
+    <div class="card-body comments" id="comment-div">
+        {{#each post.Comments}}
+        <div>
+            <p>
+                {{body}}
+            </p>
+            <p>
+              -  {{User.username}}
+            </p>
+        </div>
+        {{/each}}
+        
+    </div>
+</div>
+{{/if}}
+<form id="Comment-form" class="card">
+<div class="card-header">
+    <h3>add Comment</h3>
+</div>
+<div class="card-body">
+   <input type="hidden" name="post-id" value="{{post.id}}"
+<label class="form-label">Comment</label>
+<textarea name="comment-body" class="form-input">
+</textarea>
+<button type="submit" class="btn">Submit</button>
+</div>
+</form>
+</div>
+
+<script src="/javascript/comment.js"></script>
