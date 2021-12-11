@@ -8,21 +8,21 @@ router.get("/",auth,async(req,res)=>{
                 userId:req.session.userId
             }
         })
-        const filterPost = postData.map((post)=>{
+        const posts = postData.map((post)=>
             post.get({
                 plain:true
             })
-        })
-    res.render("allPost",{
+        )
+    res.render("allPostDashboard",{
         layout:"dashboard",
-        filterPost
+        posts
     })
     
     }catch(error){res.redirect("login")}
 
 })
-router.get('/newPost',auth,(req, res) => {
-res.render("newPost",{
+router.get('/new',auth,(req, res) => {
+res.render("new-post",{
     layout:"dashboard"
 });
 });
@@ -46,3 +46,4 @@ router.get("/edit/:id",auth,async(req,res)=>{
     }catch(error){res.redirect("login")}
 
 })
+module.exports = router

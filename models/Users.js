@@ -15,12 +15,12 @@ Users.init(
             autoIncrement:true
 
         },
-        userName:{
-            type:DataTypes.string,
+        username:{
+            type:DataTypes.STRING,
             allowNull: false
         },
         password:{
-            type:DataTypes.string,
+            type:DataTypes.STRING,
             allowNull: false,
             validate:{
                 len:[8]
@@ -39,9 +39,9 @@ Users.init(
               return updatedUserData;
             },
         }
-    },
-    {
-        sequelize:sequelize,
+    ,
+    
+        sequelize ,
         timestamps: false,
         freezeTableName: true,
         underscored: true,

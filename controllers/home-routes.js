@@ -6,12 +6,12 @@ router.get("/",async(req,res)=>{
         const postData = await Post.findAll({
             include: [Users]
         })
-        const filterPost = postData.map((post)=>{
+        const posts = postData.map((post)=>
             post.get({
                 plain:true
             })
-        })
-    res.render("homepage",{filterPost})
+        )
+    res.render("allPost",{posts})
     
     }catch(error){res.status(500).json(error)}
 })
@@ -49,5 +49,5 @@ router.get('/signup', (req, res) => {
     }
     res.render("signup");
     });
-    
+    module.exports=router
     

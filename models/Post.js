@@ -3,18 +3,18 @@ const{
     Model,
     DataTypes
 
-}= require(sequelize)
+}= require("sequelize")
 const sequelize = require("../config/connection");
 class Post extends Model{}
 Post.init(
     {
         body:{
-            type:DataTypes.string,
+            type:DataTypes.STRING,
             allowNull: false
 
         },
         title:{
-            type:DataTypes.string,
+            type:DataTypes.STRING,
             allowNull: false
  
         }
