@@ -12,7 +12,7 @@
             </div>
             </div>
             <div class="card-body">
-               {{body}} 
+               {{post.body}} 
             </div>
         
 
@@ -42,13 +42,13 @@
     <h3>add Comment</h3>
 </div>
 <div class="card-body">
-   <input type="hidden" name="post-id" value="{{post.id}}"
+   <input type="hidden" name="post-id" value="{{post.id}}"/>
 <label class="form-label">Comment</label>
 <textarea name="comment-body" class="form-input">
 </textarea>
-<button type="submit" class="btn">Submit</button>
+<button  id= "ds"type="submit" class="btn">Submit</button>
 </div>
 </form>
 </div>
 
-<script src="/javascript/comment.js"></script>
+<script src="/js/comment.js"></script>

@@ -34,7 +34,7 @@ router.get("/edit/:id",auth,async(req,res)=>{
                 plain:true
             })
         
-        
+        console.log(posts)
     res.render("editPost",{
         layout:"dashboard",
         posts
