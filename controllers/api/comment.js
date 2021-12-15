@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const {Comment} = require('../../models');
+const {Comments} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   console.log("req.body",req.body);
   try {
-    const newComment = await Comment.create({
+    const newComment = await Comments.create({
       ...req.body,
       userId: req.session.userId,
     });
@@ -16,8 +16,8 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-//router.delete('/:id', withAuth, async (req, res) => {
+
  
- 
+
 
 module.exports = router;

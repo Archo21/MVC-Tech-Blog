@@ -5,10 +5,11 @@ const{
     Model,
     DataTypes
 
-}= require ("sequelize")
+}= require ("sequelize");
+//const { Comments } = require(".");
 const sequelize = require("../config/connection");
-class Comment extends Model{}
-Comment.init(
+class Comments extends Model{}
+Comments.init(
     {
         body:{
             type:DataTypes.STRING,
@@ -20,4 +21,4 @@ Comment.init(
         sequelize
     }
 )
-module.exports=Comment
+module.exports=Comments

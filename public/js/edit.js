@@ -1,10 +1,9 @@
-const postId = document.getElementById('input[name="post-id"]').value;
+const postId = document.querySelector('input[name="post-id"]').value;
 const editFormHandler = async function(event) {
     console.log("where");
     event.preventDefault(); 
-    const title = document.getElementById('input[name="post-title"]').value;
-    const body = document.getElementById('textarea[name="post-body"]').value;
-    
+    const title = document.querySelector('input[name="post-title"]').value;
+    const body = document.querySelector('textarea[name="post-body"]').value;
 
     fetch("/api/post/" + postId, {
         method: "put", 
@@ -20,7 +19,7 @@ const editFormHandler = async function(event) {
         .catch(err => console.log(err))
 }
 const deleteHandler=async function(){
-await fetch("/api/post"+postId.value,{
+await fetch("/api/post/"+postId,{
     method:"delete",
 })
 document.location.replace("/dashboard");
@@ -28,5 +27,4 @@ document.location.replace("/dashboard");
 
 document.querySelector("#editForm").addEventListener("submit", editFormHandler);
 
-document.querySelector(".delete-post-btn").addEventListener("submit", deleteHandler);
-//class="delete-post-btn btn">Delete Post</button>
+document.querySelector("#delete-post-btn").addEventListener("click", deleteHandler);
